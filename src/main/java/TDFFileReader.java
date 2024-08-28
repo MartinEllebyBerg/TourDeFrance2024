@@ -17,10 +17,10 @@ public class TDFFileReader {
     public List<Cyclist> readFile() {
         try (Scanner scanner = new Scanner(new File(fileName))) {
             while (scanner.hasNext()) {
-                String line = scanner.nextLine();
-                String[] parts = line.split(";");
-                String name = parts[1];
-                String team = parts[2];
+                String lineFromFile = scanner.nextLine();
+                String[] lineDivided = lineFromFile.split(";");
+                String name = lineDivided[1];
+                String team = lineDivided[2];
 
             cyclistList.add(new Cyclist(name, team));
         }
